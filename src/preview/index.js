@@ -41,7 +41,20 @@ export default class PureCropperPreview extends PureComponent {
     style: PropTypes.shape({
       width: PropTypes.number.isRequired,
       height: PropTypes.number.isRequired
-    }).isRequired
+    })
+  };
+
+  static defaultProps = {
+    cropArea: {
+      left: 700,
+      top: 100,
+      width: 400,
+      height: 400
+    },
+    style: {
+      width: 200,
+      height: 200
+    }
   };
 
   render() {

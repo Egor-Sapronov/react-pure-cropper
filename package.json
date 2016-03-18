@@ -8,7 +8,7 @@
     "npm": "3.3.12"
   },
   "scripts": {
-    "build": "babel src -r lib",
+    "build": "babel src -d lib",
     "demo": "tooling watch --entry ./example/index.js",
     "demo:build": "tooling build --entry ./example/index.js",
     "build:redux": "tooling build --entry ./example/redux-example/index.js",

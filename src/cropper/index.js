@@ -9,7 +9,12 @@ export default class PureCropper extends PureComponent {
     // URL or data-url of image to be cropped
     originalImage: PropTypes.string.isRequired,
     // Area in real pixels which is desired to be cropped
-    cropArea: PropTypes.object,
+    cropArea: PropTypes.shape({
+      top: PropTypes.number.isRequired,
+      left: PropTypes.number.isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired
+    }),
     // Visual selection position and size
     selectionPosition: PropTypes.object,
 
@@ -25,6 +30,16 @@ export default class PureCropper extends PureComponent {
   };
 
   static defaultProps = {
+    cropArea: {
+      left: 700,
+      top: 100,
+      width: 400,
+      height: 400
+    },
+    style: {
+      width: 200,
+      height: 200
+    },
     onZoom: () => undefined,
     onDrag: () => undefined
   };
