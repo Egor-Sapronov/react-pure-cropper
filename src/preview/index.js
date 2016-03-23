@@ -41,7 +41,9 @@ export default class PureCropperPreview extends PureComponent {
     style: PropTypes.shape({
       width: PropTypes.number.isRequired,
       height: PropTypes.number.isRequired
-    })
+    }),
+    containerProps: PropTypes.object,
+    imageProps: PropTypes.object
   };
 
   static defaultProps = {
@@ -54,13 +56,17 @@ export default class PureCropperPreview extends PureComponent {
     style: {
       width: 200,
       height: 200
-    }
+    },
+    containerProps: {},
+    imageProps: {}
   };
 
   render() {
     const {
       originalImage,
       cropArea,
+      containerProps,
+      imageProps,
       style = {}
     } = this.props;
 
@@ -100,8 +106,8 @@ export default class PureCropperPreview extends PureComponent {
     };
 
     return (
-      <div style={ containerStyle }>
-        <img src={ originalImage } style={ imageStyle } />
+      <div style={ containerStyle } { ...containerProps }>
+        <img src={ originalImage } style={ imageStyle } { ...imageProps } />
       </div>
     );
   }
