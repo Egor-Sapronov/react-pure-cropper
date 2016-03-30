@@ -26,7 +26,9 @@ export default class PureCropper extends PureComponent {
     }).isRequired,
 
     onZoom: PropTypes.func,
-    onDrag: PropTypes.func
+    onDrag: PropTypes.func,
+
+    imageProps: PropTypes.object
   };
 
   static defaultProps = {
@@ -138,7 +140,8 @@ export default class PureCropper extends PureComponent {
     const {
       cropArea,
       originalImage,
-      style
+      style,
+      imageProps
     } = this.props;
 
     const noSelectStyle = {
@@ -212,6 +215,7 @@ export default class PureCropper extends PureComponent {
         onMouseLeave={ this.handleMouseLeave }
       >
         <img
+          { ...imageProps }
           src={ originalImage }
           style={ backgroundStyle }
         />
