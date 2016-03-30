@@ -150,10 +150,10 @@ export default class PureCropper extends PureComponent {
     };
 
     const holderStyle = {
-      ...style,
       background: `url(${BACKGROUND_IMAGE}) repeat`,
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      ...style
     };
 
     const previewStyle = {
