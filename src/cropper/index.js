@@ -218,6 +218,10 @@ export default class PureCropper extends PureComponent {
           src={ originalImage }
           style={ backgroundStyle }
           { ...imageProps }
+          style={{
+            ...backgroundStyle,
+            ...imageProps.style
+          }}
         />
       <div className="overlay" style={ overlayStyle }/>
         <PureCropperPreview
