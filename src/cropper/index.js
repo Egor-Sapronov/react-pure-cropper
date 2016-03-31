@@ -215,9 +215,9 @@ export default class PureCropper extends PureComponent {
         onMouseLeave={ this.handleMouseLeave }
       >
         <img
-          { ...imageProps }
           src={ originalImage }
           style={ backgroundStyle }
+          { ...imageProps }
         />
       <div className="overlay" style={ overlayStyle }/>
         <PureCropperPreview
