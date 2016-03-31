@@ -26,9 +26,7 @@ export default class PureCropper extends PureComponent {
     }).isRequired,
 
     onZoom: PropTypes.func,
-    onDrag: PropTypes.func,
-
-    imageProps: PropTypes.object
+    onDrag: PropTypes.func
   };
 
   static defaultProps = {
@@ -140,8 +138,7 @@ export default class PureCropper extends PureComponent {
     const {
       cropArea,
       originalImage,
-      style,
-      imageProps
+      style
     } = this.props;
 
     const noSelectStyle = {
@@ -217,11 +214,6 @@ export default class PureCropper extends PureComponent {
         <img
           src={ originalImage }
           style={ backgroundStyle }
-          { ...imageProps }
-          style={{
-            ...backgroundStyle,
-            ...imageProps.style
-          }}
         />
       <div className="overlay" style={ overlayStyle }/>
         <PureCropperPreview
