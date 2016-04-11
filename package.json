@@ -16,7 +16,7 @@
     "test": "nyc --reporter=lcov ava"
   },
   "peerDependencies": {
-    "react": "^0.14.x"
+    "react": "^15.0.x"
   },
   "repository": {
     "type": "git",
